@@ -14,6 +14,13 @@ class SignUp extends Component {
     this.setState({ [key]: e.target.value })
   }
 
+  handleSubmission = () => {
+    this.setState({ email: this.state.email })
+    this.setState({ password: this.state.password })
+    // console.log(this.state.email)
+    // console.log(this.state.password)
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -27,7 +34,7 @@ class SignUp extends Component {
           onChange={e => this.onChange('password', e)}
           type="password"
         />
-        <SubmitButton>Get Started</SubmitButton>
+        <SubmitButton onClick={this.handleSubmission}>Get Started</SubmitButton>
         <SecondaryOptionText onClick={this.props.changeMode}>
           Or Login
         </SecondaryOptionText>
